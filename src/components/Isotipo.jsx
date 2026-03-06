@@ -1,0 +1,16 @@
+export default function Isotipo({ size = 24, color = '#F2884B' }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 161.08 161.57"
+      width={size}
+      height={size}
+      style={{ flexShrink: 0 }}
+    >
+      <polygon fill={color} points="161.08 56.47 141.48 37.07 66.44 121.55 18.32 73.95 0 94.58 67.72 161.57 81.16 146.44 161.08 56.47"/>
+      <path fill={color} d="M1011.45,499.69l5.44-5.8-34.79-32.6a7.7,7.7,0,0,0-10.9.35l-12.18,13,27.58,25.85A17.58,17.58,0,0,0,1011.45,499.69Z" transform="translate(-879.89 -459.2)"/>
+      <path fill={color} d="M951.38,542.37a15.36,15.36,0,0,0,21.7-.7l6-6.39L952.12,510a8.35,8.35,0,0,0-11.78.38l-10.78,11.51Z" transform="translate(-879.89 -459.2)"/>
+      <ellipse fill={color} cx="45.82" cy="42.07" rx="11.18" ry="10.52"/>
+    </svg>
+  )
+}
