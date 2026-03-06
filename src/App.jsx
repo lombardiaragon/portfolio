@@ -12,7 +12,9 @@ export const ThemeContext = createContext();
 export const useTheme = () => useContext(ThemeContext);
 
 export default function App() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState(() =>
+    window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"
+  );
   const toggleTheme = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
 
   useEffect(() => {

@@ -95,6 +95,7 @@ body.light {
 /* ── BASE ── */
 html {
   scroll-behavior: smooth;
+  background-color: var(--bg);
 }
 
 body {

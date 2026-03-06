@@ -1,4 +1,10 @@
 import { useState } from "react";
+import emailjs from '@emailjs/browser'
+
+const EMAILJS_SERVICE  = 'service_52unboa'
+const EMAILJS_TEMPLATE = 'template_hzr0efg'
+const EMAILJS_PUBLIC   = 'P1XyMQxHxXrDmx5GP'
+
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -14,10 +20,10 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setStatus("sending");
     try {
-      // await emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE, form, EMAILJS_PUBLIC)
-      // ↑ descomentar cuando tengas las keys de EmailJS
+      await emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE, form, EMAILJS_PUBLIC)
       await new Promise((r) => setTimeout(r, 1000)); // simulación
       setStatus("sent");
       setForm({ name: "", email: "", subject: "", message: "" });

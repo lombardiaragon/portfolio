@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../App";
+import { Sun, Moon } from "lucide-react";
 import logoDark from "../assets/fede2026_horizontal_dark-bg.svg";
 import logoLight from "../assets/fede2026_horizontal_light-bg.svg";
 
@@ -76,7 +77,7 @@ export default function Navbar() {
           title="Toggle theme"
           className="w-8 h-8 rounded-[6px] border border-[var(--border2)] hover:border-[var(--orange)] bg-transparent text-[var(--muted)] hover:text-[var(--orange)] cursor-pointer flex items-center justify-center text-[0.85rem] transition-all duration-150"
         >
-          {theme === "dark" ? "☀" : "🌙"}
+          {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
         </button>
       </div>
     </nav>

@@ -27,6 +27,11 @@
     <title>Federico Lombardi — Frontend Developer</title>
   </head>
   <body>
+    <script>
+      if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.body.classList.add('light');
+      }
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
