@@ -1,10 +1,9 @@
 import { useState } from "react";
-import emailjs from '@emailjs/browser'
+import emailjs from "@emailjs/browser";
 
-const EMAILJS_SERVICE  = 'service_52unboa'
-const EMAILJS_TEMPLATE = 'template_hzr0efg'
-const EMAILJS_PUBLIC   = 'P1XyMQxHxXrDmx5GP'
-
+const EMAILJS_SERVICE = "service_52unboa";
+const EMAILJS_TEMPLATE = "template_hzr0efg";
+const EMAILJS_PUBLIC = "P1XyMQxHxXrDmx5GP";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -23,7 +22,12 @@ export default function Contact() {
 
     setStatus("sending");
     try {
-      await emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE, form, EMAILJS_PUBLIC)
+      await emailjs.send(
+        EMAILJS_SERVICE,
+        EMAILJS_TEMPLATE,
+        form,
+        EMAILJS_PUBLIC,
+      );
       await new Promise((r) => setTimeout(r, 1000)); // simulación
       setStatus("sent");
       setForm({ name: "", email: "", subject: "", message: "" });
@@ -32,14 +36,14 @@ export default function Contact() {
     }
   };
 
-  const btnBg = status === "sent" ? "bg-[#5ecb82]" : "bg-orange hover:bg-orange2";
+  const btnBg =
+    status === "sent" ? "bg-[#5ecb82]" : "bg-orange hover:bg-orange2";
 
   return (
     <section id="contact" className="section-container">
       <div className="eyebrow">
         <span className="w-8 h-px bg-orange inline-block" />
-        Contact{" "}
-        <span className="text-[var(--muted)] ml-2">/ 05</span>
+        Contact <span className="text-[var(--muted)] ml-2">/ 05</span>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-10 lg:gap-20 items-start">
@@ -73,17 +77,17 @@ export default function Contact() {
               {
                 icon: "✉",
                 label: "federico@flombardi.dev",
-                href: "mailto:federico@flombardi.dev",
+                href: "mailto:flombardi.dev@gmail.com",
               },
               {
                 icon: "gh",
                 label: "github.com/flombardi",
-                href: "https://github.com/flombardi",
+                href: "https://github.com/flombardidev",
               },
               {
                 icon: "in",
                 label: "linkedin.com/in/flombardi",
-                href: "https://linkedin.com/in/flombardi",
+                href: "https://linkedin.com/in/flombardidev",
               },
             ].map(({ icon, label, href }) => (
               <a

@@ -1,15 +1,8 @@
-import { motion } from "framer-motion";
 import fedePhoto from "../assets/fede-photo.jpg";
 import { useTheme } from "../App";
 import logoDark from "../assets/semivertical-dark.svg";
 import logoLight from "../assets/semivertical-light.svg";
 import Isotipo from "../components/Isotipo";
-
-const fade = (delay = 0) => ({
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, delay, ease: "easeOut" },
-});
 
 export default function Hero() {
   const { theme } = useTheme();
@@ -27,25 +20,18 @@ export default function Hero() {
       <div className="max-w-[1400px] mx-auto px-5 md:px-12 min-h-screen flex items-center relative pt-16">
         {/* Content */}
         <div className="relative z-[1] max-w-[700px]">
-          {/* Eyebrow */}
-          <motion.div {...fade(0.3)} className="eyebrow">
+          <div className="eyebrow animate-[fadeUp_0.7s_ease_0.3s_both]">
             <span className="w-1.5 h-1.5 rounded-full bg-orange animate-[pulse_2s_infinite] inline-block" />
             Frontend Developer · Toulouse, France
-          </motion.div>
+          </div>
 
-          {/* Name */}
-          <motion.img
-            {...fade(0.45)}
+          <img
             src={theme === "dark" ? logoDark : logoLight}
             alt="Federico Lombardi — Frontend Developer"
-            className="w-full max-w-[620px] h-auto mb-8 block py-6"
+            className="w-full max-w-[620px] h-auto mb-8 block py-6 animate-[fadeUp_0.7s_ease_0.45s_both]"
           />
 
-          {/* Body */}
-          <motion.p
-            {...fade(0.6)}
-            className="text-[1.05rem] font-light leading-[1.75] text-[var(--muted)] max-w-[520px] mb-10"
-          >
+          <p className="text-[1.05rem] font-light leading-[1.75] text-[var(--muted)] max-w-[520px] mb-10 animate-[fadeUp_0.7s_ease_0.6s_both]">
             I build{" "}
             <strong className="font-semibold text-[var(--text)]">
               React applications
@@ -56,28 +42,24 @@ export default function Hero() {
               three of them
             </strong>
             .
-          </motion.p>
+          </p>
 
-          {/* CTAs */}
-          <motion.div
-            {...fade(0.75)}
-            className="flex flex-wrap gap-4 items-center"
-          >
+          <div className="flex flex-wrap gap-4 items-center animate-[fadeUp_0.7s_ease_0.75s_both]">
             <a href="#projects" className="btn-primary">
               View my work →
             </a>
             <a href="#contact" className="btn-ghost">
               Get in touch
             </a>
-          </motion.div>
+          </div>
         </div>
 
         {/* LinkedIn Card */}
-        <motion.div
-          initial={{ opacity: 0, x: 80, y: "-50%" }}
-          animate={{ opacity: 1, x: 0, y: "-50%" }}
-          transition={{ duration: 0.8, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
-          className="hidden xl:block absolute right-12 top-1/2 w-[280px] bg-[linear-gradient(135deg,#1a3a5c_0%,#0f2340_60%,#0a1628_100%)] border border-[rgba(255,255,255,0.1)] rounded-[12px] overflow-hidden shadow-[0_24px_48px_rgba(0,0,0,0.5)] z-[2]"
+        <a
+          href="https://linkedin.com/in/flombardidev"
+          target="_blank"
+          rel="noreferrer"
+          className="hidden xl:block absolute right-12 top-1/2 w-[280px] bg-[linear-gradient(135deg,#1a3a5c_0%,#0f2340_60%,#0a1628_100%)] border border-[rgba(255,255,255,0.1)] rounded-[12px] overflow-hidden shadow-[0_24px_48px_rgba(0,0,0,0.5)] z-[2] no-underline cursor-pointer hover:border-[rgba(255,255,255,0.2)] hover:shadow-[0_32px_64px_rgba(0,0,0,0.6)] transition-all duration-300 animate-[slideInRight_1.1s_ease_1.1s_both]"
         >
           <div className="h-[72px] bg-[linear-gradient(135deg,#0a66c2_0%,#004182_100%)] relative">
             <span className="absolute top-[10px] right-[14px] text-[1.1rem] font-bold text-[rgba(255,255,255,0.9)]">
@@ -115,18 +97,15 @@ export default function Hero() {
               ↗ flombardi.dev
             </div>
           </div>
-        </motion.div>
+        </a>
 
         {/* Scroll hint */}
-        <motion.div
-          {...fade(1.4)}
-          className="absolute bottom-8 left-5 md:left-12 flex items-center gap-[0.6rem] font-mono text-[0.58rem] tracking-[0.14em] uppercase text-[var(--muted)]"
-        >
+        <div className="absolute bottom-8 left-5 md:left-12 flex items-center gap-[0.6rem] font-mono text-[0.58rem] tracking-[0.14em] uppercase text-[var(--muted)] animate-[fadeUp_0.7s_ease_1.4s_both]">
           <div className="w-8 h-px bg-[var(--border2)] relative overflow-hidden">
             <div className="absolute left-[-100%] top-0 w-full h-full bg-orange animate-[scanline_2s_ease-in-out_1.8s_infinite]" />
           </div>
           Scroll
-        </motion.div>
+        </div>
       </div>
     </section>
   );

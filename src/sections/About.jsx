@@ -81,7 +81,7 @@ export default function About() {
       {/* Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-10 lg:gap-20 items-start">
         {/* LEFT */}
-        <div className="lg:sticky top-20">
+        <div>
           {/* Photo */}
           <div className="relative w-full max-w-[320px] mx-auto lg:max-w-none aspect-[4/5] rounded-[4px] overflow-hidden border border-[var(--border)]">
             <img
@@ -116,9 +116,12 @@ export default function About() {
 
           {/* Social */}
           <div className="flex gap-3 mt-6 max-w-[320px] mx-auto lg:max-w-none">
-            {["↗ GitHub", "↗ LinkedIn"].map((l) => (
-              <a key={l} href="#" className="social-btn no-underline">
-                {l}
+            {[
+              { label: "↗ GitHub", href: "https://github.com/flombardidev" },
+              { label: "↗ LinkedIn", href: "https://linkedin.com/in/flombardidev" },
+            ].map(({ label, href }) => (
+              <a key={label} href={href} target="_blank" rel="noreferrer" className="social-btn no-underline">
+                {label}
               </a>
             ))}
           </div>
